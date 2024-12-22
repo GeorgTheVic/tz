@@ -1,0 +1,150 @@
+.sidebar {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: var(--color-sidebar-background-light-default);
+  max-width: 200px;
+  height: 90vh;
+  border-radius: 20px;
+  outline: 2px solid #E2E8F0;
+  outline-offset: -4px;
+
+  transition: width .2s ease-in-out;
+
+  &.opened {
+    width: 250px;
+  }
+
+  &.closed {
+    width: 45px;
+  }
+
+  &__bottom {
+    margin-top: auto;
+  }
+}
+
+.circle {
+  display: flex;
+  flex-direction: row;
+
+  &__item {
+    width: 10px;
+    height: 10px;
+    margin-right: 8px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+  }
+
+  &__red {
+    background-color: red;
+  }
+
+  &__yellow {
+    background-color: yellow;
+  }
+
+  &__green {
+    background-color: green;
+    margin-right: 0;
+  }
+}
+
+.logo {
+  position: relative;
+  display: flex;
+  align-content: center;
+  margin-bottom: 30px;
+
+  &__img {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+  }
+
+  &__text {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--color-text-logo-light-default);
+  }
+}
+
+.arrow {
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: var(--color-button-background-light-active);
+  color: var(--color-text-light-default);
+
+  transition: all .2s ease-in-out;
+
+  &.left {
+    right: -30px;
+  }
+
+  &.right {
+    right: -50px;
+    background-color: var(--color-button-background-light-default);
+  }
+
+  &.active {
+    color: var(--color-text-light-active);
+  }
+}
+
+.arrow:hover>.description {
+  opacity: 1;
+
+  transform: translateX(30%);
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 17px;
+  color: var(--color-text-light-default);
+  transition: all .2s ease-in-out;
+
+  cursor: pointer;
+
+  &:hover {
+    color: var(--color-text-light-hover);
+    background-color: var(--color-sidebar-background-light-hover);
+  }
+
+  & svg {
+    margin-right: 20px;
+
+  }
+
+  &__text {
+    transform: display .2s ease-in-out;
+
+    &.showed {
+      display: inline-block;
+    }
+
+    &.hidden {
+      display: none;
+    }
+  }
+}
+
+.description {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -40px;
+  color: var(--color-text-light-default);
+
+  transform: translateX(0);
+
+  transition: all .2s ease-in-out;
+}
